@@ -5,11 +5,15 @@
 @import "colores";
 @import "estructuras";
 
+
+
 .header{
     position: sticky;
     top:0px;
     padding: 0px;
 }
+
+
 
 ul{ list-style: none;
     justify-content: space-around;
@@ -31,9 +35,16 @@ ul{ list-style: none;
 }
 
 
+
+/*mixin*/
+@mixin h1($left,$justify) {
+    margin-left: $left;
+    justify-content: $justify;
+    
+}
+
 h1{
-    margin-left: 30%;
-    justify-content: center;
+    @include h1(30%,center );
     grid-row: 1/2;
     grid-column: 1/13;
 }
@@ -42,3 +53,7 @@ h1{
     grid-row: 2/3;
     border-radius: 10%;
 } 
+
+span{
+    @include h1(30%,center );
+}

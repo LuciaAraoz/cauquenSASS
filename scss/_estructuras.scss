@@ -21,11 +21,23 @@ nav{
     grid-template-columns: repeat(12,1fr);
     grid-template-rows: 200px, 300px, auto;
 }
+
+
+/*----------MAPA---------*/
+
+$mapasection:(
+    borde: solid,
+    colorborde: $colorborder,
+    padd: 3px,
+);
+
 .mision{
+    /*MAP GET*/
+    border-style:map-get($mapasection,borde);
+    border-color: map-get($mapasection,colorborde);
+    padding: map-get($mapasection,padd);
     grid-column: 1/13;
     grid-row: 1/2;
-    border: solid $colorborder;
-    padding: 3px 3px 3px 3px;
     margin-top: 30px;
     margin-bottom: 30px;
     margin-left: 30px;
@@ -36,17 +48,24 @@ nav{
     font-size: 30px;
 }
 
- .vision{
+ /*.vision{
     grid-column: 1/13;
     grid-row:3/4;
-    border: solid $colorborder;
-    padding: 3px 3px 3px 3px;
+    border-style:map-get($mapasection,borde);
+    border-color: map-get($mapasection,colorborde);
+    padding: map-get($mapasection,padd);
     margin-right: 20px;
     }
     .vision h3{
          font-size: 30px;
+    }*/
+
+    /*------EXTEND------*/
+    .vision{
+        grid-column: 1/13;
+        grid-row: 3/4;
+        @extend .mision
+       
+
     }
 
-footer{
-    
-}
